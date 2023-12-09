@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import sponsorList from "../utils/sponsorlist"
+import { sponsorList } from "../utils/sponsorlist"
 import useStore from "../../store/store"
 import { NarcState } from "../../store/type"
 

@@ -1,23 +1,53 @@
 import { Inter } from "next/font/google"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 import SponsorDropdown from "@/components/SponsorDropdown"
 import useStore from "../../store/store"
 import { NarcState } from "../../store/type"
 import EnterGithubInput from "@/components/EnterGithubInput"
+import DisplayResult from "@/components/DisplayResult"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
+  const [scoreObtained, setScoreObtained] = useState<boolean>(false)
+
   const narcState = useStore((state) => state.narcState)
   const onTrial = useStore((state) => state.githubUrl)
   const sponsorsSelected = useStore((state) => state.selectedSponsors)
   const changeUIState = useStore((state) => state.setNarcState)
+  const scoreSet = useStore((state) => state.setScore)
+  const finalScore = useStore((state) => state.score)
 
   const handleVerify = useCallback(async () => {
-    const data = await fetch("/api/validate")
-    console.log({ data })
-    changeUIState(NarcState.RESULT)
-  }, [changeUIState])
+    try {
+      const requestBody = {
+        githubUrl: onTrial,
+        usedSponsors: sponsorsSelected,
+      }
+
+      console.log({ onTrial, sponsorsSelected })
+
+      const response = await fetch("/api/validate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      })
+      if (!response.ok) {
+        throw new Error("Network response was not ok")
+      }
+      const data = await response.json()
+
+      // ui state update
+      if (data.result.score) setScoreObtained(true)
+      console.log(data)
+      // scoreSet(data.result.score)
+      // changeUIState(NarcState.RESULT)
+    } catch (error) {
+      console.error("Error fetching data:", error)
+    }
+  }, [changeUIState, onTrial, scoreSet, sponsorsSelected])
 
   const renderUIState = () => {
     switch (narcState) {
@@ -35,7 +65,12 @@ export default function Home() {
           </button>
         )
       case NarcState.RESULT:
-        return <div>Result Display Component</div> // Replace with your component
+        return (
+          <DisplayResult
+            isLoading={scoreObtained}
+            score={finalScore as number}
+          />
+        )
       case NarcState.AWARD:
         return <div>Award Component</div> // Replace with your component
       default:
