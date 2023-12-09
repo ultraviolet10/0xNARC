@@ -28,7 +28,7 @@ export default async function handler(
     "https://github.com/iamtanay7/BookSwap-ETHIndia2023",
   ]
 
-  const githubUrl = githubRepos[0] // req.body.githubUrl;
+  const githubUrl = req.body.githubUrl
   const downloadUrl = githubUrl + "/archive/refs/heads/main.zip"
   const projectName = githubUrl.split("/")[4]
   console.log(`Step 0: Analysing ${projectName}`)
@@ -42,10 +42,12 @@ export default async function handler(
   )
   // get sponsor specific prompt and send to openai
   let sponsorResponses: { [key: string]: any } = {}
-  for (let sponsorId = 0; sponsorId < sponsorList.length; sponsorId++) {
-    const result = await evaluateProject(sponsorId, code)
-    const resultQualitative = await evaluateProject(sponsorId, code, true)
-    sponsorResponses[sponsorList[sponsorId]] = {
+  const selectedSponsors: string[] = req.body.usedSponsors
+  console.log({ selectedSponsors })
+  for (let id = 0; id < selectedSponsors.length; id++) {
+    const result = await evaluateProject(selectedSponsors[id], code)
+    const resultQualitative = await evaluateProject(selectedSponsors[id], code, true)
+    sponsorResponses[id] = {
       score: result,
       qualitative: resultQualitative,
     }
@@ -112,8 +114,7 @@ async function combinator(inputPath: string, outputPath: string) {
   return combinedCode
 }
 
-function getSponsorEvalPrompt(sponsor_id: number) {
-  const sponsorName = sponsorList[sponsor_id]
+function getSponsorEvalPrompt(sponsorName: string) {
   if (sponsorName) {
     const filePath = `sponsors/${sponsorName}_ETHIndia2023.txt`
     try {
@@ -124,18 +125,17 @@ function getSponsorEvalPrompt(sponsor_id: number) {
       return undefined
     }
   } else {
-    console.error(`Sponsor with ID ${sponsor_id} not found.`)
+    console.error(`Sponsor with name ${sponsorName} not found.`)
     return undefined
   }
 }
 
 async function evaluateProject(
-  sponsorId: number,
+  sponsorName: string,
   code: string,
   qualitative = false
 ) {
-  let prompt = getSponsorEvalPrompt(sponsorId)
-  const sponsorName = sponsorList[sponsorId]
+  let prompt = getSponsorEvalPrompt(sponsorName)
   // @todo send to openai
   console.log("Step 3: Sending to OpenAI Codex")
   code = code.slice(0, 10000)
