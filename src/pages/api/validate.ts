@@ -44,10 +44,11 @@ export default async function handler(
   let sponsorResponses: { [key: string]: any } = {}
   const selectedSponsors: string[] = req.body.usedSponsors
   console.log({ selectedSponsors })
-  for (let id = 0; id < selectedSponsors.length; id++) {
-    const result = await evaluateProject(selectedSponsors[id], code)
-    const resultQualitative = await evaluateProject(selectedSponsors[id], code, true)
-    sponsorResponses[id] = {
+  for (const sponsor of selectedSponsors) {
+    const result = await evaluateProject(sponsor, code);
+    const resultQualitative = await evaluateProject(sponsor, code, true);
+    
+    sponsorResponses[sponsor] = {
       score: result,
       qualitative: resultQualitative,
     }
@@ -90,6 +91,7 @@ async function combinator(inputPath: string, outputPath: string) {
   // Process each file in the zip
   for (const [fileName, file] of Object.entries(zip.files)) {
     if (
+      fileName.endsWith(".md") ||
       fileName.endsWith(".sol") ||
       fileName.endsWith(".js") ||
       fileName.endsWith(".jsx") ||
@@ -142,9 +144,9 @@ async function evaluateProject(
   prompt = prompt?.slice(0, 1000)
   let resultScore = await callOpenAIChat(
     qualitative
-      ? `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the codebase and find instances when the sponsor product is used in the code. Respond with a list of lines of code that use the sponsor product.`
-      : `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors in a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the project and provide a score from 1-10. Respond with only the number score. Give the project 0 if it does not use the sponsor product, and 10 if it comprehensively uses the sponsor product in a creative way.`,
-    `Sponsor: ${sponsorName} \n Sponsor requirements: \n ${prompt} \n\n\n Submitted code to evaluate:${code} \n Your score:`
+      ? `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. Do not look for usage of the OpenAI api. You are to use the provided sponsor requirements to judge the codebase and find instances when the sponsor product is used in the code. Respond with a list of code instances that use the sponsor product.`
+      : `You are an evaluation judge for a hackathon. Projects are to demonstrate creative use of the provided SDKs from ${sponsorName} in a blockchain project. You are to use the provided Prize qualification requirements to judge the project and provide a score from 1-10. Respond with only the number score. Give the project a point for every use of ${sponsorName}.`,
+    `Sponsor Company: ${sponsorName} \n Prize qualification requirements: \n ${prompt} \n\n\n Submitted code to evaluate:${code} \n Your score:`
   )
 
   console.log(`Step 4: ${resultScore}`)
