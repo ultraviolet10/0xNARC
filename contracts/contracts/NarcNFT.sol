@@ -3,8 +3,9 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyToken is ERC721 {
+contract MyToken is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
@@ -14,7 +15,7 @@ contract MyToken is ERC721 {
     // Mapping from token ID to the timestamp when it was minted
     mapping(uint256 => uint256) private mintTimestamps;
 
-    constructor() ERC721("OxNARC Badge", "0xNARC") {}
+    constructor() ERC721("0xNarc", "NARC") {}
 
     // Override the transferFrom function
     function transferFrom(
@@ -43,8 +44,8 @@ contract MyToken is ERC721 {
         super.safeTransferFrom(from, to, tokenId, _data);
     }
 
-    // Public function to mint tokens
-    function safeMint(address to) public {
+    // Restricted function to mint tokens
+    function safeMint(address to) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _mint(to, tokenId);
