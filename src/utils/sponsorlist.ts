@@ -1,8 +1,29 @@
 const sponsorList = [
-    "Ethereum_Foundation",
-    "Filecoin_Network",
-    "Graph_Network",
-    "Metamask"
+    "Airstack",      
+    "Celo",      
+    "Graph",            
+    "Metamask",          
+    "Polygon",           
+    "Scroll",            
+    "Zetachain",
+    "Alliance",           
+    "Chainlink",         
+    "Huddle01",         
+    "Mona",           
+    "Powerloom",       
+    "Waku",
+    "Arbitrum",   
+    "Ethereum Foundation",
+    "Lighthouse Storage",
+    "OKX",        
+    "Push Protocol",
+    "XDM",
+    "Base",    
+    "Filecoin",      
+    "Mantle",           
+    "Octo",             
+    "Safe",              
+    "XMTP",
 ]
 
 export default sponsorList;
