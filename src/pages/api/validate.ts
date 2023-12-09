@@ -12,7 +12,7 @@ type Data = {
   name: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -31,15 +31,16 @@ export default function handler(
   const githubUrl = githubRepos[0] // req.body.githubUrl;
   const downloadUrl = githubUrl + "/archive/refs/heads/main.zip"
   const projectName = githubUrl.split("/")[4]
+  console.log(`Step 0: Analysing ${projectName}`)
   // fetch download url
-  download(downloadUrl, "temp/" + projectName + ".zip")
+  await download(downloadUrl, "temp/" + projectName + ".zip")
 
-  // combinator
-  combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
-  // send to openai
-  let prompt = getSponsorEvalPrompt(0);
-  console.log(prompt);
+  // combines code .zip into single .text based on priority filetypes
+  const code = await combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
 
+  // get sponsor specific prompt and send to openai
+  const sponsorId = 0;
+  await evaluateProject(sponsorId, code);
 
   // at some point mint an nft of the resulting score (mantle and base)
 
@@ -50,6 +51,7 @@ const streamPipeline = promisify(pipeline)
 
 async function download(url: string, outputPath: string) {
   try {
+    console.log(`Step 0.5: Downloading project zip ${url}`)
     const response = await fetch(url)
 
     if (!response.ok) {
@@ -60,7 +62,7 @@ async function download(url: string, outputPath: string) {
     const nodeStream = response.body as NodeJS.ReadableStream
 
     await streamPipeline(nodeStream, createWriteStream(outputPath))
-    console.log(`Downloaded ${url} to ${outputPath}`)
+    console.log(`Step 1: Downloaded ${url} to ${outputPath}`)
   } catch (error) {
     console.error(`Failed to download ${url}: ${error}`)
   }
@@ -89,13 +91,12 @@ async function combinator(inputPath: string, outputPath: string) {
   // Write the combined code to code.txt using promises
   await fs.promises.writeFile(outputPath, combinedCode)
   console.log(`Step 2: Combined code from ${inputPath} to ${outputPath}`);
+  return combinedCode;
 }
 
 function getSponsorEvalPrompt(sponsor_id: number)
 {
   const sponsorName = sponsorList[sponsor_id];
-  // open sponsors/Ethereum_Foundation_ETHIndia2023.txt
-
   if (sponsorName) {
     const filePath = `sponsors/${sponsorName}_ETHIndia2023.txt`;
     try {
@@ -110,3 +111,59 @@ function getSponsorEvalPrompt(sponsor_id: number)
     return undefined;
   }
 }
+
+async function evaluateProject(sponsorId: number, code: string) {
+  const prompt = getSponsorEvalPrompt(sponsorId);
+  // @todo send to openai
+  console.log("Step 3: Sending to OpenAI Codex")
+  // console.log(`Prompt: \n ${prompt}`)
+  // console.log(`Code: \n ${code}`)
+  let resultScore = await callOpenAIChat(
+    "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide a score from 1-10. Respond with only the number score.", 
+    `${code} \n Your score:`
+    );
+    
+    console.log(`Step 4: ${resultScore}`)
+    // @todo return score
+    return resultScore;
+  }
+  // Define the async function
+  function callOpenAIChat(systemPrompt: string, userInput: string) {
+    return new Promise((resolve, reject) => {
+      const OPENAI_API_KEY = process.env.OPENAI_API_KEY; // Make sure to set your API key in the environment variables
+      
+      const requestBody = {
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "system",
+            content: systemPrompt
+          },
+          {
+            role: "user",
+            content: userInput
+          }
+        ],
+        max_tokens: 10,
+      };
+      
+      fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify(requestBody)
+    })
+    .then(response => response.json())
+    .then(data => {
+      let responseScore = data.choices[0].message.content;  
+      resolve(responseScore); // Resolve the promise with the response score
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      reject(error); // Reject the promise in case of an error
+    });
+  });
+}
+
