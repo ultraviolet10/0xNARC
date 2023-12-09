@@ -133,7 +133,7 @@ async function evaluateProject(sponsorId: number, code: string, qualitative = fa
   const sponsorName = sponsorList[sponsorId];
   // @todo send to openai
   console.log("Step 3: Sending to OpenAI Codex")
-  // code = code.slice(0, 10000);
+  code = code.slice(0, 10000);
   prompt = prompt?.slice(0, 1000);
   let resultScore = await callOpenAIChat(qualitative ? `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the codebase and find instances when the sponsor product is used in the code. Respond with a list of lines of code that use the sponsor product.` :
   `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors in a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the project and provide a score from 1-10. Respond with only the number score. Give the project 0 if it does not use the sponsor product, and 10 if it comprehensively uses the sponsor product in a creative way.`, 
