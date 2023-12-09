@@ -1,4 +1,4 @@
-const sponsorList = [
+export const sponsorList = [
     "Airstack",      
     "Celo",      
     "Graph",            
@@ -25,5 +25,3 @@ const sponsorList = [
     "Safe",              
     "XMTP",
 ]
-
-export default sponsorList;
