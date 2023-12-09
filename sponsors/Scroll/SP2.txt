@@ -1,0 +1,6 @@
+Compliance with Ethereum Standards
+	•	How well does the project comply with Ethereum standards while leveraging Scroll Network’s technology?
+	•	Does the project facilitate seamless interaction between Ethereum and Scroll Network?
+Technical Excellence and Innovation
+	•	How technically proficient is the codebase, especially in implementing zkRollups and smart contract scalability?
+	•	Does the project showcase innovative solutions within the Scroll Network framework?

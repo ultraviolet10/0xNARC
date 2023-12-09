@@ -1,0 +1,3 @@
+Effective Use of XMTP for Decentralized Communication
+	•	How does the codebase leverage XMTP for decentralized messaging and communication?
+	•	Is there an innovative application of XMTP's messaging protocols in the project?

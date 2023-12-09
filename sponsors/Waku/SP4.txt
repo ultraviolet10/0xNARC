@@ -1,0 +1,3 @@
+4. Contribution to Network State Technology
+	•	For projects contributing to network state technology: How does the project use Waku to build key communication solutions for the Logos technology stack?
+	•	Does the project bring innovative ideas for network state communication?

@@ -1,0 +1,3 @@
+Integration with Safe Network's Decentralized Storage
+	•	How does the codebase utilize Safe Network's decentralized storage solutions?
+	•	Does the project leverage unique features of Safe Network, like self-authentication or perpetual data?

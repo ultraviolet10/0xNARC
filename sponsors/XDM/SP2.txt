@@ -1,0 +1,3 @@
+Implementation of Custom Analytics and Insights
+	•	How does the project implement custom analytics and insights using XDM-Fathom's capabilities?
+	•	Is there a demonstration of advanced data analysis techniques in a decentralized environment?

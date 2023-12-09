@@ -1,0 +1,3 @@
+2. Privacy and Censorship Resistance
+	•	For privacy-focused projects: How does the project enhance privacy and resist censorship using Waku's features?
+	•	Does the project introduce novel solutions for secure and private communication?

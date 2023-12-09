@@ -1,0 +1,3 @@
+Implementation of Cross-Chain Swaps and Logic
+	•	How effectively does the project implement cross-chain swaps, staking, or lending protocols using Zetachain's technology?
+	•	Is there a demonstration of complex logic that maintains the state of assets and data across multiple chains?

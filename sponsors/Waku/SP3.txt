@@ -1,0 +1,3 @@
+3. Game or Marketplace Integration
+	•	For game or marketplace projects: How effectively does the project integrate Waku for in-game or marketplace communication?
+	•	Does the project showcase creative uses of Waku in these contexts?

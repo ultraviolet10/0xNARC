@@ -1,0 +1,3 @@
+Technical Quality and Scalability
+	•	How technically sound is the codebase, particularly in the context of decentralized data storage and security?
+	•	Does the project show scalability and adaptability for future development within the Safe Network ecosystem?

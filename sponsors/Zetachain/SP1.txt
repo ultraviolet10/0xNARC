@@ -1,0 +1,3 @@
+Integration with Zetachain's Omnichain Technology
+	•	How does the codebase utilize Zetachain's omnichain technology for cross-chain interoperability?
+	•	Does the project showcase innovative applications of omnichain contracts and cross-chain messaging?

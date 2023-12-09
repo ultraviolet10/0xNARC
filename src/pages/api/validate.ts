@@ -38,13 +38,20 @@ export default async function handler(
   // combines code .zip into single .text based on priority filetypes
   let code = await combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
   // get sponsor specific prompt and send to openai
-  const sponsorId = 0;
-  const result = await evaluateProject(sponsorId, code);
-  const resultQualitative = await evaluateProject(sponsorId, code, true);
+  let sponsorResponses: {[key: string]: any} = {};
+  for (let sponsorId = 0; sponsorId < sponsorList.length; sponsorId++)
+  {
+    const result = await evaluateProject(sponsorId, code);
+    const resultQualitative = await evaluateProject(sponsorId, code, true);
+    sponsorResponses[sponsorList[sponsorId]] = {
+      score: result,
+      qualitative: resultQualitative
+    }
+  }
 
   // at some point mint an nft of the resulting score (mantle and base)
 
-  res.status(200).json({ result: {project: sponsorId, score: result, feedback: resultQualitative }})
+  res.status(200).json({ result: sponsorResponses})
 }
 
 const streamPipeline = promisify(pipeline)
@@ -84,7 +91,8 @@ async function combinator(inputPath: string, outputPath: string) {
       fileName.endsWith(".py")
     ) {
       const fileData = await file.async("string")
-      combinedCode += fileData + "\n"
+      combinedCode += fileName + ": \n"
+      combinedCode += fileData + " \n"
     }
   }
 
@@ -114,12 +122,13 @@ function getSponsorEvalPrompt(sponsor_id: number)
 
 async function evaluateProject(sponsorId: number, code: string, qualitative = false) {
   const prompt = getSponsorEvalPrompt(sponsorId);
+  const sponsorName = sponsorList[sponsorId];
   // @todo send to openai
   console.log("Step 3: Sending to OpenAI Codex")
   code = code.slice(0, 10000);
-  let resultScore = await callOpenAIChat(qualitative ? "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide detailed feedback.":
-  "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide a score from 1-10. Respond with only the number score.", 
-  `${prompt} \n ${code} \n Your score:`
+  let resultScore = await callOpenAIChat(qualitative ? `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the codebase and find instances when the sponsor product is used in the code. Respond with a list of lines of code that use the sponsor product.` :
+  `You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors in a blockchain project. OpenAI is not a sponsor of this hackathon. You are to use the provided sponsor requirements to judge the project and provide a score from 1-10. Respond with only the number score. Give the project 0 if it does not use the sponsor product, and 10 if it comprehensively uses the sponsor product in a creative way.`, 
+  `Sponsor: ${sponsorName} \n Sponsor requirements: \n ${prompt} \n\n\n Submitted code to evaluate:${code} \n Your score:`
   );
   
   console.log(`Step 4: ${resultScore}`)

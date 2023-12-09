@@ -1,0 +1,3 @@
+Utilization of Scroll Network's zkRollup Technology
+	•	How does the codebase integrate Scroll Network's zkRollup technology for scalability and speed?
+	•	Is there an innovative application of zkRollups in the project to enhance transaction efficiency?

@@ -1,0 +1,3 @@
+1. Effective Use of Waku Protocols
+	•	How does the codebase leverage Waku for off-chain and decentralized messaging?
+	•	Is there an innovative application of Waku's communication protocols in the project?
