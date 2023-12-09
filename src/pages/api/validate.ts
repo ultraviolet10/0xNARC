@@ -18,12 +18,12 @@ export default function handler(
   // input: github repo url
   const githubUrl = githubRepos[0]; // req.body.githubUrl;
   const downloadUrl = githubUrl + "/archive/refs/heads/main.zip";
-
+  const projectName = githubUrl.split("/")[4];
   // fetch download url
-  download(downloadUrl, "temp/" + githubUrl.split("/")[4] + ".zip");
+  download(downloadUrl, "temp/" + projectName + ".zip");
 
   // combinator 
-  combinator("temp/" + githubUrl.split("/")[4] + ".zip");
+  combinator("temp/" + projectName + ".zip", "temp/" +  projectName + ".txt");
   // send to openai
 
   res.status(200).json({ name: "John Doe" })
@@ -57,7 +57,7 @@ async function download(url: string, outputPath: string) {
   }
 }
 
-async function combinator(inputPath: string) {
+async function combinator(inputPath: string, outputPath: string) {
   // Read the zip file using promises
   const data = await fs.promises.readFile(inputPath);
   const zip = await JSZip.loadAsync(data);
@@ -73,5 +73,5 @@ async function combinator(inputPath: string) {
   }
 
   // Write the combined code to code.txt using promises
-  await fs.promises.writeFile('code.txt', combinedCode);
+  await fs.promises.writeFile(outputPath, combinedCode);
 }
