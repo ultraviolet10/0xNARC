@@ -48,13 +48,6 @@ const EnterGithubInput = () => {
           Submit
         </button>
       </div>
-      {/* <SponsorDropdown /> */}
-      {/* <button
-        className="flex w-[165px] bg-[#35274E] flex-row items-center justify-center rounded-xl py-2 text-center text-base font-medium text-white shadow-sm hover:bg-[#9C4FFF] hover:text-white"
-        onClick={handleVerify}
-      >
-        Verify
-      </button> */}
     </>
   )
 }

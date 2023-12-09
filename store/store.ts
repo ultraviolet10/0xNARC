@@ -6,7 +6,7 @@ const useStore = create<SponsorState>((set) => ({
   sponsors: [],
   selectedSponsors: [],
   narcState: NarcState.ENTER_GH_URL,
-  githubUrl: "",
+  githubUrl: null,
 
   addSponsor: (sponsor) =>
     set((state) => ({ sponsors: [...state.sponsors, sponsor] })),

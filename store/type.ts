@@ -10,7 +10,7 @@ export interface SponsorState {
   sponsors: string[]
   selectedSponsors: string[]
   narcState: NarcState
-  githubUrl: string
+  githubUrl: string|null
   addSponsor: (sponsor: string) => void
   removeSponsor: (sponsor: string) => void
   selectSponsor: (sponsor: string) => void
