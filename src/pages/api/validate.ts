@@ -9,7 +9,7 @@ import { createWriteStream } from "fs"
 import sponsorList from '../../utils/sponsorlist';
 
 type Data = {
-  name: string
+  result: any
 }
 
 export default async function handler(
@@ -36,15 +36,15 @@ export default async function handler(
   await download(downloadUrl, "temp/" + projectName + ".zip")
 
   // combines code .zip into single .text based on priority filetypes
-  const code = await combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
-
+  let code = await combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
   // get sponsor specific prompt and send to openai
   const sponsorId = 0;
-  await evaluateProject(sponsorId, code);
+  const result = await evaluateProject(sponsorId, code);
+  const resultQualitative = await evaluateProject(sponsorId, code, true);
 
   // at some point mint an nft of the resulting score (mantle and base)
 
-  res.status(200).json({ name: "John Doe" })
+  res.status(200).json({ result: {project: sponsorId, score: result, feedback: resultQualitative }})
 }
 
 const streamPipeline = promisify(pipeline)
@@ -112,58 +112,59 @@ function getSponsorEvalPrompt(sponsor_id: number)
   }
 }
 
-async function evaluateProject(sponsorId: number, code: string) {
+async function evaluateProject(sponsorId: number, code: string, qualitative = false) {
   const prompt = getSponsorEvalPrompt(sponsorId);
   // @todo send to openai
   console.log("Step 3: Sending to OpenAI Codex")
-  // console.log(`Prompt: \n ${prompt}`)
-  // console.log(`Code: \n ${code}`)
-  let resultScore = await callOpenAIChat(
-    "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide a score from 1-10. Respond with only the number score.", 
-    `${code} \n Your score:`
-    );
+  code = code.slice(0, 10000);
+  let resultScore = await callOpenAIChat(qualitative ? "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide detailed feedback.":
+  "You are an evaluation assistant for a hackathon. Projects are to demonstrate creative use of the provided SDKs from sponsors and build a blockchain project. You are to use the provided metrics to judge the project and provide a score from 1-10. Respond with only the number score.", 
+  `${prompt} \n ${code} \n Your score:`
+  );
+  
+  console.log(`Step 4: ${resultScore}`)
+  // @todo return score
+  return resultScore;
+}
+
+// call chat
+function callOpenAIChat(systemPrompt: string, userInput: string) {
+  return new Promise((resolve, reject) => {
+    const OPENAI_API_KEY = process.env.OPENAI_API_KEY; // Make sure to set your API key in the environment variables
+    console.log(`prompt length ${systemPrompt.length} ${userInput.length}`)
+    const requestBody = {
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt
+        },
+        {
+          role: "user",
+          content: userInput
+        }
+      ],
+      max_tokens: 100,
+    };
     
-    console.log(`Step 4: ${resultScore}`)
-    // @todo return score
-    return resultScore;
-  }
-  // Define the async function
-  function callOpenAIChat(systemPrompt: string, userInput: string) {
-    return new Promise((resolve, reject) => {
-      const OPENAI_API_KEY = process.env.OPENAI_API_KEY; // Make sure to set your API key in the environment variables
-      
-      const requestBody = {
-        model: "gpt-3.5-turbo",
-        messages: [
-          {
-            role: "system",
-            content: systemPrompt
-          },
-          {
-            role: "user",
-            content: userInput
-          }
-        ],
-        max_tokens: 10,
-      };
-      
-      fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify(requestBody)
-    })
-    .then(response => response.json())
-    .then(data => {
-      let responseScore = data.choices[0].message.content;  
-      resolve(responseScore); // Resolve the promise with the response score
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      reject(error); // Reject the promise in case of an error
-    });
+    fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify(requestBody)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    let responseScore = data.choices[0].message.content;  
+    resolve(responseScore); // Resolve the promise with the response score
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    reject(error); // Reject the promise in case of an error
   });
+});
 }
 
