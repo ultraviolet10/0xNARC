@@ -15,7 +15,10 @@ contract MyToken is ERC721, Ownable {
     // Mapping from token ID to the timestamp when it was minted
     mapping(uint256 => uint256) private mintTimestamps;
 
-    constructor() ERC721("0xNarc", "NARC") {}
+    constructor(address _deployer) 
+    ERC721("0xNarc", "NARC")        
+    Ownable(_deployer)
+    {}
 
     // Override the transferFrom function
     function transferFrom(
