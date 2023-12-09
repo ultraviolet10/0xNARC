@@ -4,6 +4,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
+import JSZip from 'jszip';
 
 type Data = {
   name: string
@@ -21,8 +22,8 @@ export default function handler(
   // fetch download url
   download(downloadUrl, "temp/" + githubUrl.split("/")[4] + ".zip");
 
-  // unzip
-  // combine all files into a single .txt file
+  // combinator 
+  combinator("temp/" + githubUrl.split("/")[4] + ".zip");
   // send to openai
 
   res.status(200).json({ name: "John Doe" })
@@ -54,4 +55,23 @@ async function download(url: string, outputPath: string) {
   } catch (error) {
     console.error(`Failed to download ${url}: ${error}`);
   }
+}
+
+async function combinator(inputPath: string) {
+  // Read the zip file using promises
+  const data = await fs.promises.readFile(inputPath);
+  const zip = await JSZip.loadAsync(data);
+
+  let combinedCode = '';
+
+  // Process each file in the zip
+  for (const [fileName, file] of Object.entries(zip.files)) {
+      if (fileName.endsWith('.sol') || fileName.endsWith('.js') || fileName.endsWith('.py')) {
+          const fileData = await file.async('string');
+          combinedCode += fileData + '\n';
+      }
+  }
+
+  // Write the combined code to code.txt using promises
+  await fs.promises.writeFile('code.txt', combinedCode);
 }
