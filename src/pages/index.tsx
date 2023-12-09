@@ -18,8 +18,8 @@ export default function Home() {
     // api call to server to make openapi request
     // feed in docs, zipped
     // need blob?
-    // const data = await fetch("/api/validate")
-    // console.log({ data })
+    const data = await fetch("/api/validate")
+    console.log({ data })
   }, [])
 
   return (
