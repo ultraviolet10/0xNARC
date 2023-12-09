@@ -1,0 +1,51 @@
+﻿About
+Base is a secure, low-cost, developer-friendly Ethereum-equivalent L2 blockchain built on the OP Stack by Coinbase. Our vision is to collectively work towards an ambitious goal: bring the next billion users onchain. Base is a founding participant in the Optimism Superchain and the second core developer of the OP Stack.
+Prizes
+▼
+🏆 Build a Consumer Product ⸺ $6,000
+
+   ① $2,500       ② $2,000       ③ $1,500   
+Leveraging Base, build a user friendly consumer product. Be creative!
+Build a tool to make subscription payments easier and simpler
+Make DAOs easier to discover, join, and manage
+Make a creative NFT project
+Fill any gaps currently not deployed on Base
+Qualification Requirements
+Work must be deployed on or connected to Base in some way
+Work that is open source and free for others to use
+Shared artifacts (GitHub, planning documents, and a short video)
+For this hackathon, the project must be a new development in order to ensure equal opportunity
+▼
+🏆 Best use of Account Abstraction and Base Paymaster ⸺ $4,000
+
+   ① $2,500       ② $1,500   
+Utilize a smart contract wallet to further improve UX
+Utilize the new Base Paymaster to allow for free end user transactions
+Create a tool to make developers spin up an AA+Paymaster project faster
+Qualification Requirements
+Work must be deployed on or connected to Base in some way
+Work that is open source and free for others to use
+Shared artifacts (GitHub, planning documents, and a short video)
+For this hackathon, the project must be a new development in order to ensure equal opportunity
+Resources
+Base Documentation
+https://docs.base.org/
+↗
+Welcome to Base
+https://docs.base.org/base-camp/docs/welcome
+↗
+Mirror
+https://base.mirror.xyz/
+↗
+Twitter
+https://twitter.com/buildonbase
+↗
+Discord
+https://base.org/discord
+↗
+Bridge to Base
+https://bridge.base.org/
+↗
+Base Goerli Faucet
+https://coinbase.com/faucets/base-ethereum-goerli-faucet
+↗

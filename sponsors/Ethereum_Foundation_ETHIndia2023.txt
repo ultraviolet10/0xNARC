@@ -1,0 +1,45 @@
+About
+The Ethereum Foundation (EF) is a non-profit organization that supports the Ethereum ecosystem. We are part of a larger community of organizations and individuals that fund protocol development, grow the ecosystem, and advocate for Ethereum.
+Anon Aadhaar is a project that allows individuals to prove their citizenship anonymously. This project provides circuits, an SDK, and demo applications that generate and verify proofs of valid Aadhaar cards, integrating easily to support a wide range of applications.
+Prizes
+?
+? Best use of Anon Aadhaar SDK ? $8,000
+
+   ? $4,000       ? $2,500       ? $1,500   
+This prize will reward the best apps built with the Anon Aadhaar SDK.
+Qualification Requirements
+? Calling all innovators! We're seeking the best Anon Aadhaar-integrated apps. Show off your technical prowess, exceptional UX/UI, and problem-solving capabilities. The top implementations using the Anon Aadhaar SDK stand to win rewards! Ready to showcase your app's brilliance?
+Links and Resources
+Documentation
+https://anon-aadhaar-documentation.vercel.app/docs/intro
+?
+Github Repo
+https://github.com/privacy-scaling-explorations/anon-aadhaar
+?
+Idea list
+https://pse-team.notion.site/Cool-ideas-to-build-with-Anon-Aadhaar-fd4c76d28c244ca1b020c8a7db602728?pvs=4
+?
+?
+? Best implementation of Anon Aadhaar on mobile ? $1,000
+This prize celebrates the most outstanding mobile native implementation of the Anon Aadhaar protocol.
+Qualification Requirements
+Projects will be judged based on:
+- Technical implementation excellence
+- Demonstrated efficiency in proving time
+- Exceptional UX/UI design
+?
+? Best social good build with Anon Aadhaar ? $1,000
+? Attention developers! We've got an exciting opportunity for you. Will we reward the project with the most social impact using Anon Aadhaar.
+Qualification Requirements
+Anon Aadhaar Use: Effective integration for impact.
+Social Impact Potential: Measureable and sustainable change.
+Resources
+Anon Aadhaar - Ideas to build
+https://pse-team.notion.site/Cool-ideas-to-build-with-Anon-Aadhaar-fd4c76d28c244ca1b020c8a7db602728?pvs=4
+?
+Anon Aadhaar documentation
+https://anon-aadhaar-documentation.vercel.app/docs/intro
+?
+Github repo
+https://github.com/privacy-scaling-explorations/anon-aadhaar
+?

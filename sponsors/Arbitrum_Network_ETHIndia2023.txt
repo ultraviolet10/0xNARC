@@ -1,0 +1,50 @@
+﻿About
+Designed with you in mind, Arbitrum empowers you to explore and build on the leading Layer 2 in the largest Layer 1 ecosystem, Ethereum. Arbitrum continues to accelerate the Web3 landscape with a suite of scaling solutions that provide high-throughput, low-cost smart contracts, backed by industry-leading proving technology rooted in Ethereum.
+For this hackathon, we’re excited to bring you to Stylus - One chain, many languages! Through the power of WebAssembly (WASM) smart contracts, users can deploy programs written in their favorite programming languages, including Rust, C, and C++, to run alongside Solidity contacts on Arbitrum. It’s over an order-of-magnitude faster, slashes fees, and is fully interoperable with the Ethereum Virtual Machine.
+Prizes
+▼
+🏆 Best Library / Framework ⸺ $5,000
+
+   ① $4,000       ② $1,000   
+This top-tier prize will be given to the best library and framework utilizing Arbitrum technology.
+▼
+🏆 Best Stylus Project ⸺ $5,000
+
+   ① $4,000       ② $1,000   
+For this prize, we're looking for the best project utilizing Stylus! Through the power of WebAssembly smart contracts, users can deploy programs written in their favorite programming languages, including Rust, C, and C++, to run alongside Solidity contacts on Arbitrum. It’s over an order-of-magnitude cheaper and is fully interoperable with the Ethereum Virtual Machine.
+▼
+🏆 🏆 Most Original ⸺ $2,500
+
+   ① $2,000       ② $500   
+We're looking for the most original project that is launched on Arbitrum!
+▼
+🏆 Best Technology ⸺ $2,500
+
+   ① $2,000       ② $500   
+This prize will be given to the best technology that is built on Arbitrum!
+▼
+🏆 Pool Prize ⸺ $5,000
+
+Split evenly between all qualifying projects
+This prize is split equally amongst all qualifying submissions to Arbitrum!
+Qualification Requirements
+Send your successful project submission that is integrated with Arbitrum.
+Resources
+Stylus, a gentle introduction
+https://docs.arbitrum.io/stylus/stylus-gentle-introduction
+↗
+Stylus Quickstart
+https://docs.arbitrum.io/stylus/stylus-quickstart
+↗
+Getting Started with Arbitrum Stylus
+https://www.youtube.com/watch?v=CF1hLTGnByM
+↗
+stylus-sdk-rs
+https://github.com/OffchainLabs/stylus-sdk-rs/tree/stylus/examples/erc20
+↗
+Arbitrum Hacker Tool Kit
+https://www.notion.so/arbitrum/Arbitrum-Hacker-Tool-Kit-375a142fcbee4e6a8c62bd0022f13138
+↗
+A gentle introduction to Arbitrum
+https://docs.arbitrum.io/intro
+↗

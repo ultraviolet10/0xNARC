@@ -1,0 +1,42 @@
+﻿About
+1inch Network unites decentralized protocols whose synergy enables the most lucrative, fastest and protected operations in the DeFi space. The initial protocol of the 1inch Network is a DEX aggregator solution that searches deals across multiple liquidity sources, offering users better rates than any individual exchange. This protocol incorporates the Pathfinder algorithm which finds the best paths among different markets over 180 liquidity sources on Ethereum, BNB Chain, Polygon, Avalanche, Optimistic Ethereum, Arbitrum and Gnosis Chain. In just over two years the 1inch DEX aggregator has reached 2M users and surpassed $150B in overall trading volume. The 1inch Aggregation Protocol facilitates cost-efficient and secure swap transactions across multiple liquidity sources. 
+Prizes
+▼
+💎 Build an Innovative Application on top of 1inch Network's Fusion API ⸺ $8,000
+
+   ① $4,000       ② $2,500       ③ $1,500   
+Build an innovative application that leverages the power of 1inch Network's Fusion API. Your application should provide unique functionalities and value-added features to users within the Defi ecosystem.
+Criteria:
+1 - Utilize the 1inch Network's Fusion API to access and interact with the Fusion protocol.
+2 - The utilization of Fusion API should have a meaningful purpose
+Qualification Requirements
+Your application should be an open-source project accompanied by clear documentation explaining its usage. Focus on demonstrating the unique value your application brings to the 1inch Network ecosystem while ensuring a seamless and secure user experience.
+Links and Resources
+1inch Network's Fusion API documentation
+https://docs.1inch.io/docs/fusion-swap/introduction
+↗
+▼
+🪙 Build Innovative Solutions on top of 1inch Network's Token Plugins ⸺ $6,000
+
+   ① $3,000       ② $2,000       ③ $1,000   
+1inch recently announced new library that introduces an extendable and secure system for ERC20-based tokens. By subscribing an account to various plugins, users can dynamically enhance the functionality of their tokens. Technically plugins are a collection of smart contracts that track changes in ERC20 token balances and perform supplementary accounting tasks for those balances. They are particularly useful when you need to track, for example, token shares without actually transferring tokens to an accounting contract.
+Try to hack using such library. That is it.
+Criteria:
+1 - Use https://github.com/1inch/token-plugins
+2 - The utilization of token-plugins should have a meaningful purpose
+Links and Resources
+Token plugins Repo
+https://github.com/1inch/token-plugins
+↗
+Anton Bukov talk about token plugins
+https://www.youtube.com/watch?v=a9uCqWmH-HE
+↗
+▼
+🦄 Enhance your app with 1inch Developer Portal APIs ⸺ $6,000
+
+   ① $3,000       ② $2,000       ③ $1,000   
+1inch Developer Portal do have multiple APIs (Balances, Fiat Prices, Portfolio, Swap, Limit Order). Use any of it to enhance your project. Apps with the best use cases will be eligible for bounties
+Qualification Requirements
+1 - Use 1inch dev portal APIs (Any of it)
+2 - The utilization of 1inch Developer Portal should have a meaningful purpose
+http://portal.1inch.dev/

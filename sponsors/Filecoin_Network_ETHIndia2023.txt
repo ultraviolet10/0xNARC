@@ -1,0 +1,74 @@
+Filecoin, the world's largest decentralized network offers more than 16+ Exbibytes of storage. It allows users to store, request, and transfer data via a verifiable marketplace. Filecoin is completely open-source, enabling people from all over the world to participate.
+Prizes
+?
+? Most unique projects in the Filecoin Ecosystem ? $9,000
+
+   ? $3,000       ? $3,000       ? $3,000   
+Best innovative applications or technologies building with Filecoin projects. Using one or several decentralized technologies from the Filecoin ecosystem qualifies for this track.
+Qualifying tech:
+? Filecoin: decentralized storage network, connecting storage providers and clients
+?? Storage Onramps: NFT.Storage, Lighthouse.Storage
+? Filecoin Saturn: an incentivized CDN for fast retrieval
+?? FVM: the Filecoin Virtual Machine - a blockchain VM hypervisor - supporting runtimes
+? IPC: InterPlanetary Consensus - next-generation scalability tech using trees of subnets
+New Tech Breakthroughs ??
+- we are also encouraging innovative breakthroughs using FVM and IPC
+?? New FVM runtimes: Experiment on FVM, adding new execution runtimes. This could be existing blockchain VMs or components like zkEVM, fhEVM, CairoVM, MoveVM, or similar. Or this could be broader virtualization technologies like: Cloudflare Workers, Docker, or even FirecrackerVM.
+? Large Scale Applications: Experiment on IPC, leveraging throughput properties IPC subnets and/or tooling to build large scale apps (games, social networks, and more). Ideas: build subnets for games (board games, turn-based games, or similar), subnets for computation (Compute over Data, programming pipelines, etc), or subnets with interesting FVM runtimes (see above).
+?? Warning: this requires a lot of experimentation - there be dragons ?
+Bonus points for building out project ideas unique to the Filecoin Ecosystem!
+Qualification Requirements
+All projects using Qualifying tech will be considered. Ideas that excited us:
+?Programmatic Storage: Best solutions & tools built on/for FVM to enable programmatic data storage & retrieval, for data clients and/or storage providers on the Filecoin network.
+?DataDAOs: Build meaningful DataDAOs & DAO tooling solutions on FVM to enable curation, use, storage, analysis, monetization, and/or governance of valuable datasets using FVM DataDAO starter kit.
+?State/storage integration: Build services that retrieve, store and interact with small pieces of data on IPFS through FVM smart contracts. Bonus points for implementing storage and reward disbursement.
+?DeFi: Best DeFi tools, services, or instruments built on FVM for token-holders & 3000+ storage providers (SPs) - e.g. liquid staking, SP pools, factorization, data insurance, SP insurance, and more.
+??? New FVM runtimes: Experiment with new execution runtimes. (described more above).
+?? Large Scale Applications: Leverage IPC subnets and/or tooling to build large scale apps (games, social networks, and more). (more examples above). You may need to run local nodes!
+PS: IPFS alone does not qualify.
+Links and Resources
+Tech Stack Overview of all projects
+https://www.notion.so/ecosystem-wg/Getting-Started-With-Protocol-Labs-Tech-stack-d906467ce53b4acf84765e61863d9d85
+?
+Interplanetary Consensus Website
+https://ipc.space/
+?
+InterPlanetary Consenses Quick Start
+https://docs.ipc.space/quickstarts
+?
+FVM Official Site
+https://fvm.filecoin.io/
+?
+FVM Quick Start Guide
+https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/
+?
+FVM Hackathon Cheat Sheet
+https://github.com/filecoin-project/awesome-filecoin/blob/main/fvm.md
+?
+Filecoin Saturn Resources
+https://docs.saturn.tech/
+?
+Storage (on-ramps) Helpers Docs: NFT.Storage
+https://nft.storage/docs/
+?
+Storage (on-ramps) Helpers Docs: Lighthouse.Storage
+https://www.lighthouse.storage/documentation
+?
+IPC: Repo with Instructions on Running a Local Node
+https://github.com/consensus-shipyard/ipc-dx-docker
+?
+Latest workshops on PL Technologies from Open Data Hack
+https://www.youtube.com/playlist?list=PLfEHHr3qexv_R_8bfgT1_5x4rN-rmd138
+?
+IPC: All you need to know to get started
+https://www.notion.so/ecosystem-wg/6-IPC-InterPlanetary-Consensus-14e34990dfaa418e8afa615cbbda76a4
+?
+?
+? Unique Projects in Filecoin Ecosystem (up to 15 teams) ? $11,000
+
+Split evenly between all qualifying projects
+Split evenly between all qualifying projects. See prize above for more details - same challenge statements and qualification requirements apply!
+Prize to be awarded up to 15 teams, capped at $1000 per team.
+(If less than 11 teams qualify for the pool prize, each team gets $1000!)
+Qualification Requirements
+All projects using Qualifying tech will be considered. Same challenge statements and qualification requirements as above.

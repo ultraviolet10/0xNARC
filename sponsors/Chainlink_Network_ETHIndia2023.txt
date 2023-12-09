@@ -1,0 +1,110 @@
+About
+Chainlink is the industry-standard Web3 services platform. It has enabled trillions of dollars in transaction volume across DeFi, onchain finance, gaming, NFTs, and other major industries. As the leading decentralized oracle network, Chainlink empowers developers to build feature-rich Web3 applications with seamless access to real-world data, offchain computation, and cross-chain interoperability across any blockchain, providing global enterprises with a universal gateway to all blockchains.
+Chainlink Automation enables conditional execution of your smart contracts functions. Define the business rules, the trigger and what will happen.
+Chainlink VRF is the verifiable, tamper-proof random number generator for blockchain gaming and NFT projects. Any smart contract can get random values without compromising security or usability.
+Chainlink Proof of Reserve Feeds provides the status of the reserves for several assets in the same way as Price Feeds.
+Chainlink NFT Floor Pricing Feeds provides a conservative and risk averse floor price estimate for an NFT collection.
+Chainlink Data Feeds are the quickest way to connect your smart contracts to the real-world data such as asset prices, reserve balances, and L2 sequencer health.
+Chainlink Functions can help you to build a dApp that pulls (or pushes) data connecting to an external API, this could be a public or private API, a SaaS app, any IoT device, or an enterprise system. In addition to off-chain data, it could utilize off-chain computations on the data as well (for example, aggregate data and put on-chain or connect to decentralized storage systems such as IPFS).
+Chainlink Data Streams provides low-latency delivery of market data off-chain that you can verify onchain. With Chainlink Data Streams, decentralized applications (dApps) now have on-demand access to high-frequency market data backed by decentralized and transparent infrastructure.
+Prizes
+?
+? Best use of Chainlink CCIP ? $2,000
+
+Up to 2 teams will receive $1,000
+This prize will be awarded to the best two projects that meaningfully use Chainlink CCIP.
+The Chainlink Cross-Chain Interoperability Protocol (CCIP) provides a single simple interface through which dApps and web3 entrepreneurs can securely meet all their cross-chain needs, including token transfers and arbitrary messaging.
+Qualification Requirements
+- Using Chainlink CCIP inside your smart contracts is required
+- Each project must use Chainlink CCIP in some form to make a state change on a blockchain, otherwise it will not be eligible. This means that a front end simply reading from Chainlink data feeds doesn't count
+Links and Resources
+CCIP Documentation
+https://docs.chain.link/ccip
+?
+Hackathon Resources
+https://docs.chain.link/resources/hackathon-resources
+?
+Developer Hub - CCIP Resources
+https://dev.chain.link/products/ccip
+?
+Brownie Starter Kits
+https://github.com/smartcontractkit/chainlink-mix
+?
+dApp Tools Starter Kits
+https://github.com/smartcontractkit/dapptools-starter-kit
+?
+Hardhat Starter Kits
+https://github.com/smartcontractkit/hardhat-starter-kit
+?
+Truffle Starter Kits
+https://github.com/smartcontractkit/truffle-starter-kit
+?
+?
+? Best use of Chainlink Functions ? $2,000
+
+Up to 2 teams will receive $1,000
+This prize will be awarded to the best two projects that meaningfully use Chainlink Functions.
+Chainlink Functions can help you to build a dApp that pulls (or pushes) data connecting to an external API, this could be a public or private API, a SaaS app, any IoT device, or an enterprise system. In addition to off-chain data, it could utilize off-chain computations on the data as well (for example, aggregate data and put on-chain or connect to decentralized storage systems such as IPFS).
+Qualification Requirements
+- Using Chainlink Functions inside your smart contracts is required.
+- Each project must use Chainlink Functions in some form to make a state change on a blockchain, otherwise it will not be eligible. This means that a front end simply reading from Chainlink data feeds doesn't count.
+Links and Resources
+Chainlink Functions Docs
+https://docs.chain.link/chainlink-functions
+?
+Developer Hub - Functions Resources
+https://dev.chain.link/products/functions
+?
+Hackathon Resources
+https://docs.chain.link/resources/hackathon-resources
+?
+Brownie Starter Kits
+https://github.com/smartcontractkit/chainlink-mix
+?
+dApp Tools Starter Kits
+https://github.com/smartcontractkit/dapptools-starter-kit
+?
+Hardhat Starter Kits
+https://github.com/smartcontractkit/hardhat-starter-kit
+?
+Truffle Starter Kits
+https://github.com/smartcontractkit/truffle-starter-kit
+?
+?
+? Best use of other Chainlink Services ? $1,000
+This prize will be awarded to the best project that uses VRF, Automation, PoR, Data Feeds or Data Streams
+Qualification Requirements
+- Using Chainlink Data Feeds, Chainlink Data Streams, Chainlink VRF, Chainlink Proof of Reserves or Chainlink Automation inside your smart contracts is required.
+- Each project must use Chainlink in some form to make a state change on a blockchain, otherwise it will not be eligible. This means that a front end simply reading from Chainlink data feeds doesn't count.
+- It must be possible for the judges to find the Chainlink usage in your code. Only the intention to use is not valid.
+Links and Resources
+Developer Hub - Data Resources
+https://dev.chain.link/products/data
+?
+Developer Hub - Automation Resources
+https://dev.chain.link/products/automation
+?
+Developer Hub - VRF Resources
+https://dev.chain.link/products/vrf
+?
+Developer Hub - General Resources
+https://dev.chain.link/products/general
+?
+Chainlink Docs
+https://docs.chain.link/
+?
+Hackathon Resources
+https://docs.chain.link/resources/hackathon-resources
+?
+Brownie Starter Kits
+https://github.com/smartcontractkit/chainlink-mix
+?
+dApps Tools Starter Kits
+https://github.com/smartcontractkit/dapptools-starter-kit
+?
+Hardhat Starter Kits
+https://github.com/smartcontractkit/hardhat-starter-kit
+?
+Truffle Starter Kits
+https://github.com/smartcontractkit/truffle-starter-kit
+?

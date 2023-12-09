@@ -1,0 +1,33 @@
+The Graph is an indexing protocol for querying networks like Ethereum, Polygon and IPFS. Anyone can build and publish open APIs, called subgraphs, making data easily accessible.
+Prizes
+?
+? Best New Subgraph ? $3,000
+
+   ? $2,000       ? $1,000   
+Build and deploy a custom subgraph that indexes data from a smart contract to query blockchain data for your dapp.
+?
+? Best Use of Subgraph ? $2,500
+
+   ? $1,700       ? $800   
+Query a new or existing subgraph on the Graph Explorer or hosted service using the public query URL from the subgraph dashboard.
+?
+? Best Use of Substreams ? $2,000
+Use a new or existing substream to process and consume web3 data. This includes the use of Substreams-powered subgraphs.
+Qualification Requirements
+Use a new or existing substream to process and consume web3 data. This includes the use of Substreams-powered subgraphs.
+Resources
+Official Docs
+https://thegraph.com/docs/en/
+?
+Quick Start
+https://thegraph.com/docs/en/cookbook/quick-start/
+?
+Building Subgraphs for the decentralized Graph Network
+https://www.youtube.com/watch?v=OmtHVVvrRJw
+?
+Querying a Subgraph from a Web Application
+https://www.youtube.com/watch?v=PjyKPMpahuc
+?
+Hacker Resource Pack
+https://www.notion.so/Hacker-Resource-Pack-8dcb2946fa7f49f4803aaf550c939264
+?

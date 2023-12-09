@@ -1,0 +1,61 @@
+﻿About
+Mantle is a high-performance Ethereum layer-2 network built with modular architecture delivering low fees and high security.
+Builders can leverage Mantle’s unique design to build dApps with exceptional UX, all while relying on Ethereum’s unrivaled security.
+Prizes
+▼
+📈 Best DeFi Project ⸺ $2,500
+
+Up to 2 teams will receive $1,250
+Inspire the next frontier of DeFi on Mantle. Whether it's integrating with real-world assets (RWAs), creating a novel lending or staking protocol, or designing a new liquidity mining mechanism, your project should highlight the limitless potential of DeFi on Mantle.
+Qualification Requirements
+1. The submission must be deployed on Mantle testnet or mainnet (include a link to smart contract deployed on Mantle Explorer)
+2. A video demo and GitHub repo must be submitted.
+▼
+👾 Best NFT, Social, or Gaming Project ⸺ $2,500
+Build an engaging NFT, Social or Gaming project with innovative onchain solutions. Ideas:
+- NFT & AR use cases
+- Location-based minting
+- Arcade and mini-games
+- Games on Telegram
+- Mobile-first games
+- Classic games (chess, backgammon)
+- Gamification and leaderboards
+- Chat platforms
+Qualification Requirements
+1. The submission must be deployed on Mantle testnet or mainnet (include a link to smart contract deployed on Mantle Explorer)
+2. A video demo and GitHub repo must be submitted
+▼
+📲 Best UX ⸺ $2,500
+One of the most challenging problems in Web3 is creating an intuitive and seamless User Experience for dApps. Build a dApp that raises the bar for UX in some way. Make sure to explain in your submission in detail what you’ve done to make UX more accessible. Ideas:
+- Create a user-friendly mobile application or PWA
+- Design a seamless onboarding flow for first-time crypto users
+- Develop an adaptive interface that caters to both novice and expert users
+- Gasless transactions
+- Walletless logins
+- Web2-like application experience
+Qualification Requirements
+1. The submission must be deployed on Mantle testnet or mainnet (include a link to smart contract deployed on Mantle Explorer)
+2. A video demo and GitHub repo must be submitted
+▼
+🛠 Best Infrastructure & Tooling Project ⸺ $2,500
+Drive the future of the Ethereum ecosystem with tools that enhance the developer experience. We're looking for inventive solutions that simplify, optimize, and supercharge development on Ethereum, using Mantle's infrastructure.
+Ideas:
+- Build a visual smart contract builder that simplifies the creation of complex contract logic
+- Develop an analytics tool that provides insights into dApp performance and user interactions
+- Create a library that facilitates seamless integrations for Ethereum applications across various L2s
+Qualification Requirements
+- The project must be integrated with Mantle in some way (Please indicate how the project works on Mantle. Include a link to explorer if a smart contract is deployed on Mantle)
+- A video demo and GitHub repo must be submitted
+Resources
+Mantle Discord Server
+https://discord.gg/0xmantle
+↗
+Mantle Devs Telegram Channel
+https://t.me/mantledevs
+↗
+Mantle Docs
+http://docs.mantle.xyz
+↗
+Mantle GitHub
+https://github.com/mantlenetworkio
+↗

@@ -1,0 +1,87 @@
+﻿About
+Celo is the carbon-negative, mobile-first, EVM-compatible PoS blockchain where developers can build decentralized applications that create the conditions for prosperity — for everyone.
+Prizes
+▼
+🥇 Best dApps on Celo Blockchain ⸺ $6,000
+
+   ① $3,000       ② $2,000       ③ $1,000   
+Show us your best decentralized application build for real world use cases, deployed on Celo!
+Qualification Requirements
+- Contracts must be deployed on Alfajores or Mainnet
+- Demo to someone on the Celo team during Sponsor Judging
+- Mention smart contract addresses of all contracts deployed on Celo in your top-level project README, also Verify them on Celoscan or Celo Explorer.
+▼
+📱 Best Mobile dApp on Celo ⸺ $2,000
+Build the best mobile dApp integrating Opera MiniPay or Valora Wallet hooks. MiniPay is a stablecoin-based non-custodial wallet that allows you to send and receive funds instantly using just a phone number. Check out the list of Ideas and how to Get Started Building.
+Qualification Requirements
+In order to qualify for this bounty, projects must be demo'ed using MiniPay Site Tester. Learn about the MiniPay tester here and come meet the Celo Devs team at our booth if you have any questions.
+- Contracts must be deployed on Alfajores or Mainnet
+- Demo to someone on the Celo team during Sponsor Judging
+- Mention smart contract addresses of all contracts deployed on Celo in your top-level project README, also Verify them on Celoscan or Celo Explorer.
+If you are building on MiniPay.
+- Project must be demo'ed using MiniPay Site Tester
+If you are building Valora Hooks
+- Project must be demo'ed in the latest version of Valora (or if you make modifications to Valora, a build on your local machine). If you're using Valora hooks, see the Live Preview in Valora feature.
+Links and Resources
+MiniPay Wallet
+https://www.opera.com/products/minipay
+↗
+MiniPay Tester
+https://docs.celo.org/developer/build-on-minipay#how-to-test-your-dapp-in-minipay
+↗
+Build for MiniPay
+https://docs.celo.org/developer/build-on-minipay
+↗
+Valora Hooks
+https://docs.valora.xyz/hooks
+↗
+Valora Hooks Examples
+https://github.com/valora-inc/hooks/tree/main/src/apps
+↗
+▼
+🏆 Best dApp utilizing Account Abstraction or SocialConnect on Celo ⸺ $2,000
+Build a dApp that improves user experience for onboarding the next billion users using SocialConnect or Account Abstraction on Celo.
+SocialConnect is an open source protocol that maps off-chain personal identifiers (such as phone numbers, twitter handles, etc.) to on-chain account addresses.
+Qualification Requirements
+If using Account Abstraction
+*Mention your "Smart Account Factory address" or/and "Paymaster Address" or/and "Smart Account" created using some factory in your project README.
+*Mention a Tx Hash/Link performed using AA in your project README.
+If you are using SocialConnect
+*Mention the Issuer address you are using for lookups in your project README.
+*If you are using your own Issuer address, mention that in the README.
+For all bounties:
+* Contracts must be deployed on Alfajores or Mainnet
+* Demo to someone on the Celo team during Sponsor Judging
+* Mention smart contract addresses of all contracts deployed on Celo in your top-level project README, also Verify them on Celoscan or Celo Explorer.
+Links and Resources
+SocialConnect Quick Start
+https://github.com/celo-org/social-connect#-quickstart
+↗
+Resources
+Resources
+https://clabsco.notion.site/Developer-Resources-c7608f7d963b4dffb5e9fb0990bea7ea
+↗
+Celo Docs
+https://docs.celo.org/
+↗
+Celo Composer
+https://docs.celo.org/developer/deploy
+↗
+Celo Composer CLI
+https://github.com/celo-org/celo-composer
+↗
+Celo Composer Tutorial
+https://docs.celo.org/tutorials?operator=AND&amp;tags=celosage&amp;tags=composer
+↗
+Tutorials
+https://docs.celo.org/tutorials
+↗
+Need some test tokens?
+https://faucet.celo.org/alfajores
+↗
+Celo Academy
+https://celo.academy/
+↗
+What to Build Ideas
+https://clabsco.notion.site/Celo-Hackathon-Ideas-1396d40f70944f92b5108d5100fda41b
+↗

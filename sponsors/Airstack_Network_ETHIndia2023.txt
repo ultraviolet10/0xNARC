@@ -1,0 +1,61 @@
+﻿About
+Airstack is the easiest way to build composable web3 applications!
+Combine on-chain, off-chain, cross-chain, cross-project, and identity into your apps.
+🤖 Use Airstack AI to learn our APIs and write your queries
+🔗 Integrate the Onchain Graph into your applications to turbocharge user experience, engagement and recommendations
+🙋 Our team is available 24/7. Ask our team anything here -- we're here to help!
+🔑 IMPT: You can get a free API key by signing up with Lens, Farcaster or ENS. If you do not have one, stop by our booth and we will help you get one
+🆕 get $5K additional prizes building with Airstack + XMTP (chat us to learn more)
+Prizes
+▼
+🥇 Best overall use of Airstack APIs ⸺ $10,000
+
+   ① $3,000       ② $2,500 ×𝟸       ③ $1,000 ×𝟸   
+We're looking for the best overall apps created with Airstack. Need some inspiration? Come chat with our team or check out our ideas list 👇 👇 👇
+🆕 get $5K additional prizes building with Airstack ($10k) + XMTP ($5K) (chat us to learn more)
+Resources
+🌏 Explorer
+https://explorer.airstack.xyz
+↗
+📑 docs, tutorials, guides
+https://docs.airstack.xyz
+↗
+👨‍💻 SDKs
+https://app.airstack.xyz/sdks
+↗
+🔗 Onchain Graph
+https://link.airstack.xyz/graph
+↗
+🥗 Combinations (X & Y & Z)
+https://link.airstack.xyz/combinations
+↗
+@ XMTP
+http://link.airstack.xyz/xmtp
+↗
+🪆 ERC6551
+http://link.airstack.xyz/6551
+↗
+💜 Farcaster
+https://link.airstack.xyz/farcaster
+↗
+🎉 Social Follows
+https://link.airstack.xyz/social
+↗
+📞 Recommendation engines
+http://link.airstack.xyz/recommend
+↗
+🛑 Spam prevention
+https://link.airstack.xyz/stop-spam
+↗
+🔥 APIs & 🤖 AI engine
+https://app.airstack.xyz/
+↗
+🌱 Lens
+https://docs.airstack.xyz/airstack-docs-and-faqs/guides/lens
+↗
+💬 Developer Telegram (🙋 ask us anything)
+https://t.me/+1k3c2FR7z51mNDRh
+↗
+💡 Ideas List!
+https://glory-bellflower-ba8.notion.site/Airstack-ETH-Global-2023-31417caf62aa45aca04a1cc612c24971?pvs=4
+↗

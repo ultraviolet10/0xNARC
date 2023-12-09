@@ -6,6 +6,7 @@ import { pipeline, Readable } from "stream"
 import { promisify } from "util"
 import JSZip from "jszip"
 import { createWriteStream } from "fs"
+import sponsorList from '../../utils/sponsorlist';
 
 type Data = {
   name: string
@@ -36,6 +37,11 @@ export default function handler(
   // combinator
   combinator("temp/" + projectName + ".zip", "temp/" + projectName + ".txt")
   // send to openai
+  let prompt = getSponsorEvalPrompt(0);
+  console.log(prompt);
+
+
+  // at some point mint an nft of the resulting score (mantle and base)
 
   res.status(200).json({ name: "John Doe" })
 }
@@ -82,4 +88,25 @@ async function combinator(inputPath: string, outputPath: string) {
 
   // Write the combined code to code.txt using promises
   await fs.promises.writeFile(outputPath, combinedCode)
+  console.log(`Step 2: Combined code from ${inputPath} to ${outputPath}`);
+}
+
+function getSponsorEvalPrompt(sponsor_id: number)
+{
+  const sponsorName = sponsorList[sponsor_id];
+  // open sponsors/Ethereum_Foundation_ETHIndia2023.txt
+
+  if (sponsorName) {
+    const filePath = `sponsors/${sponsorName}_ETHIndia2023.txt`;
+    try {
+      const prompt = fs.readFileSync(filePath, 'utf8');
+      return prompt;
+    } catch (error) {
+      console.error(`Error reading file ${filePath}: ${error}`);
+      return undefined;
+    }
+  } else {
+    console.error(`Sponsor with ID ${sponsor_id} not found.`);
+    return undefined;
+  }
 }

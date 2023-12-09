@@ -1,0 +1,75 @@
+﻿About
+MetaMask uses the Gas API by Infura to optimize gas fees for millions of users across the major networks. Now you can use the same Gas API in your dapp. To win the prize, use the Gas API in your dapp AND connect user wallets with the MetaMask SDK OR deploy your dapp's smart contract on Linea. The judges will be impressed if you use all three, Gas API + SDK + Linea.
+Prizes
+▼
+📲 Best Gas API Application ⸺ $5,000
+
+Up to 3 teams will receive $1,666
+To be eligible for this bounty you must:
+
+● Use the Gas API (*requires Infura
+● Choose either option A or B
+A) Incorporate the MetaMask SDK or
+B) Deploy a contract to Linea
+
+║Gas API
+
+MetaMask's Gas API optimizes gas fees for millions of users across the major networks. It is now available on Infura for free for limited usage, so you can use the same Gas API in your dapp now.
+
+● Fetch Real-Time Gas Prices
+● Access Gas Price History
+● Estimate Transaction Speed
+
+〡METAMASK SDK OPTION
+
+If you choose to use the MetaMask SDK in your project, understand how it differs from just connecting using our MetaMask API
+
+MetaMask SDK Resources:
+
+● Video Tutorial
+● Demo Repo
+● SDK Developer Guide
+
+〡LINEA OPTION
+
+If you choose to deploy to Linea Testnet or Mainnet on Linea, if you know how to deploy on Ethereum, you know how to deploy on Linea!
+
+Linea is an EVM-equivalent zk-rollup that helps you securely scale your dapps. Bonus points for incorporating tools from our tooling page.
+Qualification Requirements
+Code needs to be viewable on GitHub including a descriptive README of all tech used
+GitHub code should be runnable by our judges
+Each submission should have a short video explaining scope and functionality
+Links and Resources
+Infura Gas API Docs
+https://docs.infura.io/infura-expansion-apis/gas-api
+↗
+Infura Gas API Quickstart
+https://docs.infura.io/infura-expansion-apis/gas-api/quickstart
+↗
+Gas Tracker with Gas API and Nextjs
+https://metamask.io/news/developers/how-to-build-a-simple-gas-tracker-app-with-gas-api-and-nextjs/
+↗
+How to use the Gas API
+https://www.youtube.com/watch?v=74clgGR6rok
+↗
+Linea Docs
+https://docs.linea.build/
+↗
+Lineascan
+https://lineascan.build/
+↗
+MetaMask SDK Developer Guide
+https://dev.to/metamask/metamask-sdk-dev-guide-4f6m
+↗
+MetaMask JS SDK NPM Package
+https://www.npmjs.com/package/@metamask/sdk
+↗
+MetaMask SDK React Components
+https://www.npmjs.com/package/@metamask/sdk-react-ui
+↗
+Web3-onboard MetaMask SDK Package
+https://www.npmjs.com/package/@web3-onboard/metamask/v/2.0.2-alpha.3
+↗
+GitHub GasAPI-Template
+https://github.com/consensys/GasAPI-Template
+↗

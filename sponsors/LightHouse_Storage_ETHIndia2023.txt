@@ -1,0 +1,33 @@
+﻿About
+Lighthouse is a perpetual file storage protocol that allows you to pay once for your files and store them long-term. The aim is to move users from a rent-based cost model where they rent their files on cloud storage to a perpetual storage model.
+Prizes
+▼
+🏆 Best use of programmable storage functionalities ⸺ $2,000
+For this prize, we are looking for valuable use cases of our programmable storage functionality that allow users to program a resource like storage on a granular level with parameters like number of replications, renewal epochs, and repair policy.
+Qualification Requirements
+1. Use programmable storage functionalities via Lighthouse SDK or Contracts
+2. Deploy on FVM (Filecoin virtual machine) testnet or mainnet
+3. Make the project live on a link that we can try and use. Projects with a live link are more likely to win than showing it on localhost.
+Links and Resources
+Programmable storage docs
+https://docs.lighthouse.storage/lighthouse-1/filecoin-virtual-machine/section-a
+↗
+▼
+🏆 Best overall use of Lighthouse SDK ⸺ $3,000
+
+   ① $1,500       ② $1,500   
+This track is for all projects using Lighthouse SDK and its various functionalities like perpetual storage, token gating, IPNS, pinning, and encryption to build on IPFS and Filecoin. Using Lighthouse SDK with other Filecoin tech like IPC, Lilypad, Saturn, etc., will also qualify.
+Qualification Requirements
+1. Use Lighthouse SDK in your application
+2. Make the project live on a link that we can try and use. Projects with a live link are more likely to win than showing it on localhost.
+3. Projects with contracts deployed on any chain will qualify for this prize
+Resources
+Documentation
+https://docs.lighthouse.storage/lighthouse-1/
+↗
+Discord
+https://discord.com/invite/c4a4CGCdJG
+↗
+Lighthouse Files Dashboard
+https://files.lighthouse.storage/
+↗

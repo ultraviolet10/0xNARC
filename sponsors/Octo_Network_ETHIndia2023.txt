@@ -1,0 +1,41 @@
+﻿About
+Announcing the Okto embedded wallet, where the wallet integrates right into your application. The wallet is interoperable, i.e., The assets in the wallet can be used across dApps without fragmenting user assets and liquidity. The wallet handles all technology complexities like gas exchanges, cross chain bridging, social logins, on-ramp into crypto., Etc.The customer experience One wallet to keep all your assets. Access your assets across all applications A wallet that lives inside your favorite applications (like Finance apps, Games, Social, Content, shopping, etc) Seamless transactions without any redirections Self custody & secure assets. 1-click/social Login 100% transaction success Gasless experience Chain-abstracted experience enabled via built-in bridges & batch transactions Easy on-ramp/off-ramp 60+ countries Unified P\&L view Buidler experience No need for blockchain engineering expertise: web2 builder experience Finish SDK integration < 1 day Server to server APIs for high transaction throughput & success Account abstraction wallet with risk engine Android/iOS/Web UI kit Blockchain APIs Company / treasury wallet APIs 100% security audited Zero compliance overheads Analytics for customer behavior
+Hackathon challenge: Integrate the Okto embedded wallet into your innovative application to build a seamless transition for the masses from web2 to web3. Our goal in this hackathon is to merge the power of Web3's embedded wallet functionality seamlessly into applications, amplifying user accessibility and engagement. The emphasis here lies not just on technical integration but on creating a user-centric design that simplifies the complexities of managing wallets and transactions.Evaluation Criteria: Functionality: How well have you integrated the Okto embedded wallet SDK into your application Innovation: How innovative is your application and its use of web3. User Experience: Is the user experience worthy of web2 users.
+Prizes
+▼
+🤴 Best app using Okto SDK ⸺ $3,000
+Okto has launched an Account Abstraction powered embedded wallet, which provides interoperability across multiple chains. Okto SDK provides Web2 like APIs with all Web3 functionality. We want the hackers to build a kickass UX and user focused games/socials/defi-apps using Okto SDK. Build on top of the example mentioned in the doc or use Okto SDK to create wallets and interact with it.
+Qualification Requirements
+- Build an interactive and easy to use app
+- Build a Portfolio UI for showcasing users assets
+- Use Okto SDK as a wallet
+- Create smart contract and deploy on Polygon Mumbai.
+- Interact with deployed smart contract using Raw Transactions API.
+- Users should use Create Wallet, Token Transfer, Portfolio APIs.
+Links and Resources
+Okto Docs
+https://docs.okto.tech/
+↗
+▼
+🐙 Integrate Okto SDK as your Wallet ⸺ $2,000
+
+Up to 2 teams will receive $1,000
+Okto has launched an Account Abstraction powered embedded wallet, which provides interoperability across multiple chains. Okto SDK provides Web2 like APIs with all Web3 functionality. We want the hackers to build a kickass UX and user focused games/socials/defi-apps using Okto SDK. Build on top of the example mentioned in the doc or use Okto SDK to create wallets and interact with it.
+Qualification Requirements
+- Build an interactive and easy to use app
+- Use Okto SDK as a wallet
+- Users should use Create Wallet, Portfolio APIs.
+Links and Resources
+Okto Docs
+https://docs.okto.tech/
+↗
+Resources
+Web3's First Embedded Wallet
+https://docsend.com/view/94d984htymsnshjn
+↗
+Tutorial Demo
+https://www.loom.com/share/f2bae46126964156ad35c3ef88d51685?sid=5a097558-dcbf-4d62-88a0-01db6f029dc2
+↗
+Docs
+https://docs.okto.tech/
+↗

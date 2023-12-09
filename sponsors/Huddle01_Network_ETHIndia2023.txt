@@ -1,0 +1,32 @@
+About
+Huddle01 is on a mission to democratize how we connect over cyberspace. Leverage our current suite of developer friendly SDKs to build live audio/video applications in minutes.
+Prizes
+?
+? Mobile Track ? $2,000
+Leverage the Mobile SDK (Alpha) to develop an application that integrates high-quality audio and video functionalities within the web3 space while ensuring an exceptional user experience.
+Qualification Requirements
+You need to use Huddle01's React Native SDK to add audio/video functionality.
+Links and Resources
+React Native SDK
+https://alpha.docs.huddle01.com/docs/React/react-native-walkthrough
+?
+?
+? AI Track ? $1,500
+Create a dApp where an AI bot can enter and interact with the users using audio/video input from the participants.
+Qualification Requirements
+- You should use Huddle01 SDK
+- Use any AI tool, which joins the room and user can interact with it
+Links and Resources
+Huddle01 Alpha SDK
+https://alpha.docs.huddle01.com/docs
+?
+?
+?? Metaverse Track ? $1,500
+Create an immersive gaming experience where individuals can freely explore diverse virtual landscapes while incorporating audio and video features with enabling/disabling media based on proximity
+Qualification Requirements
+- Use Huddle01 SDK to add audio/video functionality
+- UX should be smooth
+Links and Resources
+Huddle01 Alpha SDK
+https://alpha.docs.huddle01.com/docs
+?

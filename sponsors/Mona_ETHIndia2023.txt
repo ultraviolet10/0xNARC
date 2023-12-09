@@ -1,0 +1,56 @@
+﻿About
+Mona is a metaverse platform where spaces, avatars, and assets are built with a 3D creation tool (blender, maya, rhino, etc) and Unity. Mona utilizes the ethereum blockchain and IPFS for storage. Come explore what you can build on Mona with our bounty.
+Prizes
+▼
+💰 Product for Discovery of Spaces ⸺ $2,000
+All projects must be developed during the hackathon, no prior projects.
+--------
+Product for Discovery
+Develop an app that enables users to actively engage with virtual spaces by upvoting, commenting, and tipping creators using cryptocurrency.
+--------
+Qualification Requirements
+The following are mandatory features to be demoed on your video:
+--------
+Product Hunt
+- Work that is open source and free for others to use
+- The app must allow users to actually visit the Mona Space.
+- Upvoting a space.
+- Commenting a space.
+- Tipping the creator [walk us through the process, no need to complete transaction]
+--------
+Please have the GitHub Repo house all the documentation, codes, and videos of your demo (less than 5 minutes).
+Links and Resources
+General Monaverse Documentation
+https://docs.monaverse.com/
+↗
+▼
+💰 Integrating MONA ⸺ $1,000
+Integrate MONA spaces or avatars or features into your existing projects.
+Qualification Requirements
+Please have the GitHub Repo house all the documentation, codes, and videos of your demo (less than 5 minutes).
+▼
+💰 Product for Meetup ⸺ $2,000
+All projects must be developed during the hackathon, no prior projects.
+--------
+Product for Meetups
+Develop a meetup product that allows users to choose a Mona space link, pick a date and time, and schedule a meeting or event.
+--------
+Qualification Requirements
+The following are mandatory features to be demoed on your video:
+--------
+Product Meetup
+- Work that is open source and free for others to use
+- Working process of creating an event.
+- Mona Spaces that are linked, should work.
+--------
+Please have the GitHub Repo house all the documentation, codes, and videos of your demo (less than 5 minutes).
+Resources
+Monaverse Collectible API
+https://app.swaggerhub.com/apis/Monaverse/monaverse-collectibles_api/1.0.0#/
+↗
+Monaverse Collectibles Endpoint
+https://api.hackathon.monaverse.com/collectibles
+↗
+Monaverse Collectibles Top Artist Endpoint
+https://api.hackathon.monaverse.com/collectibles/top-artists
+↗
