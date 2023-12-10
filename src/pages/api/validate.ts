@@ -57,7 +57,7 @@ export default async function handler(
 
   // at some point mint an nft of the resulting score (mantle and base)
   const mint_wallet = req.body.mint_wallet || '0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868';
-  if(process.env.DEPLOYER_WALLET_PRIVATE_KEY)
+  if(process.env.DEPLOYER_WALLET_MNEMONIC)
     mintNFT(mint_wallet)
   res.status(200).json({ result: sponsorResponses })
 }
@@ -225,8 +225,8 @@ const url = 'https://goerli.base.org';
 const provider = new ethers.JsonRpcProvider(url);
 
 // Your private key (keep it secure!)
-// let mnemonicWallet = ethers.Wallet.fromPhrase(process.env.DEPLOYER_WALLET_PRIVATE_KEY || '');
-const privateKey = process.env.DEPLOYER_WALLET_PRIVATE_KEY || '';
+let mnemonicWallet = ethers.Wallet.fromPhrase(process.env.DEPLOYER_WALLET_MNEMONIC || '');
+const privateKey = mnemonicWallet.privateKey;
 const wallet = new ethers.Wallet(privateKey, provider);
 
 // Connect to the contract
