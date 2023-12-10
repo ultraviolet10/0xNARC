@@ -83,7 +83,8 @@ export default function Home() {
       className={`flex min-h-screen flex-col items-center justify-start ${inter.className}`}
     >
       <div className="flex flex-col items-center h-screen w-screen">
-        <div className="flex flex-row w-full p-16 items-center justify-center">
+        <div className="flex flex-col w-full p-16 items-center justify-center">
+          <img src="/logo.png" alt="narc logo" className="w-32" />
           <span className="font-white text-[25px]">0xNARC</span>
         </div>
         <div className="relative flex flex-col space-y-20 p-10 h-[500px] w-[800px] items-center justify-center border-[1px] border-gray-600 rounded-xl">
