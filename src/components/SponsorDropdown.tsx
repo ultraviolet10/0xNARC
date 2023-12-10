@@ -43,7 +43,8 @@ const SponsorDropdown = () => {
         {selectedSponsorsText}
       </button>
       {isOpen && (
-        <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg text-black">
+        <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg text-black"
+        onMouseLeave={toggleDropdown}>
           {sponsorList.map((sponsor, index) => (
             <div
               key={index}
