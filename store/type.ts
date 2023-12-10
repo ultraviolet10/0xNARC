@@ -20,3 +20,12 @@ export interface SponsorState {
   setGithubUrl: (githubUrl: string) => void
   setScore: (score: number) => void
 }
+
+export type QualitativeScore = {
+  score: number
+  qualitative: string
+}
+
+export type Score = {
+  [key: string]: QualitativeScore
+}

@@ -7,7 +7,7 @@ import { promisify } from "util"
 import JSZip from "jszip"
 import { createWriteStream } from "fs"
 import { sponsorList } from "../../utils/sponsorlist"
-import { ethers } from "ethers";
+import { ethers } from "ethers"
 
 type Data = {
   result: any
@@ -44,21 +44,20 @@ export default async function handler(
   // get sponsor specific prompt and send to openai
   let sponsorResponses: { [key: string]: any } = {}
   const selectedSponsors: string[] = req.body.usedSponsors
-  console.log({ selectedSponsors })
   for (const sponsor of selectedSponsors) {
-    const result = await evaluateProject(sponsor, code);
-    const resultQualitative = await evaluateProject(sponsor, code, true);
-    
+    const result = await evaluateProject(sponsor, code)
+    const resultQualitative = await evaluateProject(sponsor, code, true)
+
     sponsorResponses[sponsor] = {
       score: result,
       qualitative: resultQualitative,
     }
   }
 
-  // at some point mint an nft of the resulting score (mantle and base)
-  const mint_wallet = req.body.mint_wallet || '0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868';
-  if(process.env.DEPLOYER_WALLET_MNEMONIC)
-    mintNFT(mint_wallet)
+  // mint an nft of the resulting score (mantle and base)
+  const mint_wallet =
+    req.body.mint_wallet || "0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868"
+  if (process.env.DEPLOYER_WALLET_MNEMONIC) mintNFT(mint_wallet)
   res.status(200).json({ result: sponsorResponses })
 }
 
@@ -83,7 +82,6 @@ async function download(url: string, outputPath: string) {
   }
 }
 
-// @todo move to util
 async function combinator(inputPath: string, outputPath: string) {
   // Read the zip file using promises
   const data = await fs.promises.readFile(inputPath)
@@ -141,7 +139,6 @@ async function evaluateProject(
   qualitative = false
 ) {
   let prompt = getSponsorEvalPrompt(sponsorName)
-  // @todo send to openai
   console.log("Step 3: Sending to OpenAI Codex")
   code = code.slice(0, 10000)
   prompt = prompt?.slice(0, 1000)
@@ -153,7 +150,8 @@ async function evaluateProject(
   )
 
   console.log(`Step 4: ${resultScore}`)
-  // @todo return score
+
+  // return score
   return resultScore
 }
 
@@ -198,39 +196,40 @@ function callOpenAIChat(systemPrompt: string, userInput: string) {
   })
 }
 
-
 // Define the contract ABI
 const contractABI = [
   {
-      "inputs": [
-          {
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-          }
-      ],
-      "name": "safeMint",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-  }
+    inputs: [
+      {
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+    ],
+    name: "safeMint",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
   // ... include other contract methods if needed
-];
+]
 
 // Set up your contract's address and the Goerli network URL
-const contractAddress = '0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868';
-const url = 'https://goerli.base.org';
+const contractAddress = "0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868"
+const url = "https://goerli.base.org"
 
 // Create a provider connected to the Goerli testnet
-const provider = new ethers.JsonRpcProvider(url);
+const provider = new ethers.JsonRpcProvider(url)
 
 // Your private key (keep it secure!)
-let mnemonicWallet = ethers.Wallet.fromPhrase(process.env.DEPLOYER_WALLET_MNEMONIC || '');
-const privateKey = mnemonicWallet.privateKey;
-const wallet = new ethers.Wallet(privateKey, provider);
+let mnemonicWallet = ethers.Wallet.fromPhrase(
+  process.env.DEPLOYER_WALLET_MNEMONIC || ""
+)
+const privateKey = mnemonicWallet.privateKey
+const wallet = new ethers.Wallet(privateKey, provider)
 
 // Connect to the contract
-const contract = new ethers.Contract(contractAddress, contractABI, wallet);
+const contract = new ethers.Contract(contractAddress, contractABI, wallet)
 
 // Define the recipient address for minting
 // const recipientAddress = 'RECIPIENT_ADDRESS';
@@ -238,10 +237,10 @@ const contract = new ethers.Contract(contractAddress, contractABI, wallet);
 // Call the safeMint function
 async function mintNFT(recipientAddress: string) {
   try {
-      const tx = await contract.safeMint(recipientAddress);
-      await tx.wait();
-      console.log('NFT minted successfully:', tx);
+    const tx = await contract.safeMint(recipientAddress)
+    await tx.wait()
+    // console.log('NFT minted successfully:', tx);
   } catch (error) {
-      console.error('Minting failed:', error);
+    console.error("Minting failed:", error)
   }
 }

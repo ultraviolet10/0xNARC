@@ -1,31 +1,35 @@
+/* eslint-disable @next/next/no-img-element */
 import { Inter } from "next/font/google"
 import { useCallback, useState } from "react"
 import SponsorDropdown from "@/components/SponsorDropdown"
 import useStore from "../../store/store"
-import { NarcState } from "../../store/type"
+import { NarcState, Score } from "../../store/type"
 import EnterGithubInput from "@/components/EnterGithubInput"
 import DisplayResult from "@/components/DisplayResult"
+import LoadingSpinner from "@/components/LoadingSpinner"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function Home() {
-  const [scoreObtained, setScoreObtained] = useState<boolean>(false)
+  const [scoreObtained, setScoreObtained] = useState<{
+    [key: string]: Score
+  } | null>(null)
+  const [parsing, setParsing] = useState<boolean>(false)
 
   const narcState = useStore((state) => state.narcState)
   const onTrial = useStore((state) => state.githubUrl)
   const sponsorsSelected = useStore((state) => state.selectedSponsors)
   const changeUIState = useStore((state) => state.setNarcState)
-  const scoreSet = useStore((state) => state.setScore)
-  const finalScore = useStore((state) => state.score)
 
   const handleVerify = useCallback(async () => {
     try {
+      // ui loading state
+      setParsing(true)
+
       const requestBody = {
         githubUrl: onTrial,
         usedSponsors: sponsorsSelected,
       }
-
-      console.log({ onTrial, sponsorsSelected })
 
       const response = await fetch("/api/validate", {
         method: "POST",
@@ -40,14 +44,14 @@ export default function Home() {
       const data = await response.json()
 
       // ui state update
-      if (data.result.score) setScoreObtained(true)
-      console.log(data)
-      // scoreSet(data.result.score)
-      // changeUIState(NarcState.RESULT)
+      if (data.result) setScoreObtained(data.result)
+      changeUIState(NarcState.RESULT)
     } catch (error) {
+      setParsing(false)
+      // maybe show toast
       console.error("Error fetching data:", error)
     }
-  }, [changeUIState, onTrial, scoreSet, sponsorsSelected])
+  }, [changeUIState, onTrial, sponsorsSelected])
 
   const renderUIState = () => {
     switch (narcState) {
@@ -56,21 +60,23 @@ export default function Home() {
       case NarcState.SELECT_SPONSORS:
         return <SponsorDropdown /> // Example, replace with your actual component
       case NarcState.VERIFY:
-        return (
-          <button
-            className="flex w-[165px] bg-[#35274E] flex-row items-center justify-center rounded-xl py-2 text-center text-base font-medium text-white shadow-sm hover:bg-[#9C4FFF] hover:text-white"
-            onClick={handleVerify}
-          >
-            Verify
-          </button>
-        )
+        if (!parsing) {
+          return (
+            <button
+              className="flex w-[165px] bg-[#35274E] flex-row items-center justify-center rounded-xl py-2 text-center text-base font-medium text-white shadow-sm hover:bg-[#9C4FFF] hover:text-white"
+              onClick={handleVerify}
+            >
+              Verify
+            </button>
+          )
+        } else {
+          return <LoadingSpinner />
+        }
       case NarcState.RESULT:
-        return (
-          <DisplayResult
-            isLoading={scoreObtained}
-            score={finalScore as number}
-          />
-        )
+        if (scoreObtained) {
+          return <DisplayResult isLoading={false} scores={scoreObtained} />
+        }
+
       case NarcState.AWARD:
         return <div>Award Component</div> // Replace with your component
       default:
@@ -85,7 +91,6 @@ export default function Home() {
       <div className="flex flex-col items-center h-screen w-screen">
         <div className="flex flex-col w-full p-16 items-center justify-center">
           <img src="/logo.png" alt="narc logo" className="w-32" />
-          <span className="font-white text-[25px]">0xNARC</span>
         </div>
         <div className="relative flex flex-col space-y-20 p-10 h-[500px] w-[800px] items-center justify-center border-[1px] border-gray-600 rounded-xl">
           {onTrial && onTrial !== "" ? (
