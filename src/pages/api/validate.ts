@@ -7,6 +7,7 @@ import { promisify } from "util"
 import JSZip from "jszip"
 import { createWriteStream } from "fs"
 import { sponsorList } from "../../utils/sponsorlist"
+import { ethers } from "ethers";
 
 type Data = {
   result: any
@@ -55,7 +56,9 @@ export default async function handler(
   }
 
   // at some point mint an nft of the resulting score (mantle and base)
-
+  const mint_wallet = req.body.mint_wallet || '0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868';
+  if(process.env.DEPLOYER_WALLET_PRIVATE_KEY)
+    mintNFT(mint_wallet)
   res.status(200).json({ result: sponsorResponses })
 }
 
@@ -193,4 +196,52 @@ function callOpenAIChat(systemPrompt: string, userInput: string) {
         reject(error) // Reject the promise in case of an error
       })
   })
+}
+
+
+// Define the contract ABI
+const contractABI = [
+  {
+      "inputs": [
+          {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+          }
+      ],
+      "name": "safeMint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+  }
+  // ... include other contract methods if needed
+];
+
+// Set up your contract's address and the Goerli network URL
+const contractAddress = '0xB587Be5607CEDdDc6049E7Ad5EcF6523916A0868';
+const url = 'https://goerli.base.org';
+
+// Create a provider connected to the Goerli testnet
+const provider = new ethers.JsonRpcProvider(url);
+
+// Your private key (keep it secure!)
+// let mnemonicWallet = ethers.Wallet.fromPhrase(process.env.DEPLOYER_WALLET_PRIVATE_KEY || '');
+const privateKey = process.env.DEPLOYER_WALLET_PRIVATE_KEY || '';
+const wallet = new ethers.Wallet(privateKey, provider);
+
+// Connect to the contract
+const contract = new ethers.Contract(contractAddress, contractABI, wallet);
+
+// Define the recipient address for minting
+// const recipientAddress = 'RECIPIENT_ADDRESS';
+
+// Call the safeMint function
+async function mintNFT(recipientAddress: string) {
+  try {
+      const tx = await contract.safeMint(recipientAddress);
+      await tx.wait();
+      console.log('NFT minted successfully:', tx);
+  } catch (error) {
+      console.error('Minting failed:', error);
+  }
 }
