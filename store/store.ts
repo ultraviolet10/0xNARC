@@ -1,7 +1,7 @@
 import { create } from "zustand"
-import { SponsorState, NarcState } from "./type"
+import { StoreState, NarcState } from "./type"
 
-const useStore = create<SponsorState>((set) => ({
+const useStore = create<StoreState>((set) => ({
   sponsors: [],
   selectedSponsors: [],
   narcState: NarcState.ENTER_GH_URL,

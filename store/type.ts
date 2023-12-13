@@ -6,12 +6,12 @@ export enum NarcState {
   AWARD = "AWARD",
 }
 
-export interface SponsorState {
+export interface StoreState {
   sponsors: string[]
   selectedSponsors: string[]
   narcState: NarcState
-  githubUrl: string|null
-  score: number|null
+  githubUrl: string | null
+  score: number | null
   addSponsor: (sponsor: string) => void
   removeSponsor: (sponsor: string) => void
   selectSponsor: (sponsor: string) => void
